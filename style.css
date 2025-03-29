@@ -1,0 +1,74 @@
+/* Custom styles that extend Tailwind */
+#groceryList li {
+    transition: all 0.2s ease;
+}
+
+#groceryList li:hover {
+    background-color: #f8fafc;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+/* Auth Modal Styles */
+#authModal {
+  transition: opacity 0.3s ease;
+}
+
+#authForms input {
+  transition: border-color 0.2s ease;
+}
+
+#authForms input:focus {
+  border-color: #10b981;
+}
+
+/* Featured Product Effects */
+.border-green-500 {
+    transition: all 0.3s ease;
+}
+
+.border-green-500:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.border-green-500 .add-to-cart {
+    transition: transform 0.2s ease;
+}
+
+.border-green-500 .add-to-cart:hover {
+    transform: scale(1.05);
+}
+
+/* Product Image Effects */
+.featured-product img {
+    transition: transform 0.3s ease;
+}
+
+.featured-product:hover img {
+    transform: scale(1.05);
+}
+
+/* Featured badge animation */
+[class*="bg-green-500"]:not(.add-to-cart) {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Animation for new items */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#groceryList li {
+    animation: fadeIn 0.3s ease forwards;
+}
