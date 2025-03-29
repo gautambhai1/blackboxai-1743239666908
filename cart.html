@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Manoj Grocery Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="app.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-green-700">Your Shopping Cart</h1>
+            <a href="products.html" class="text-green-600 hover:text-green-800">
+                <i class="fas fa-arrow-left mr-1"></i> Continue Shopping
+            </a>
+        </header>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <div id="cartItems" class="divide-y divide-gray-200">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="mt-6 border-t pt-6">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-semibold">Subtotal</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-semibold">Delivery</span>
+                    <span>₹50</span>
+                </div>
+                <div class="flex justify-between items-center text-lg font-bold mb-6">
+                    <span>Total</span>
+                    <span id="cartTotal">₹50</span>
+                </div>
+
+                <form id="checkoutForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+                        <input type="text" id="customerName" required
+                               class="w-full px-4 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number*</label>
+                        <input type="tel" id="customerPhone" required
+                               class="w-full px-4 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Delivery Address*</label>
+                        <textarea id="deliveryAddress" rows="3" required
+                                  class="w-full px-4 py-2 border rounded-lg focus:ring-green-500 focus:border-green-500"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method*</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="paymentMethod" value="cod" checked 
+                                       class="h-4 w-4 text-green-600 focus:ring-green-500">
+                                <span class="ml-2">Cash on Delivery</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="paymentMethod" value="online" 
+                                       class="h-4 w-4 text-green-600 focus:ring-green-500">
+                                <span class="ml-2">Online Payment</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition">
+                        Place Order
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
