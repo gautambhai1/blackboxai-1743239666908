@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj Grocery Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .nav-link:hover {
+            color: #86efac;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-green-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i class="fas fa-shopping-basket text-2xl"></i>
+                <span class="text-xl font-bold">Manoj Groceries</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="nav-link hover:text-green-200">Home</a>
+                <a href="products.html" class="nav-link hover:text-green-200">Products</a>
+                <a href="cart.html" class="nav-link hover:text-green-200">Cart</a>
+                <a href="staff-login.html" class="nav-link hover:text-green-200">Staff Login</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-green-200">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="cart.html" class="hover:text-green-200 relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-yellow-400 text-xs text-black rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </a>
+                <button class="md:hidden text-xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-green-800 px-4 py-2" id="mobile-menu">
+            <a href="index.html" class="block py-2 hover:text-green-200">Home</a>
+            <a href="products.html" class="block py-2 hover:text-green-200">Products</a>
+            <a href="cart.html" class="block py-2 hover:text-green-200">Cart</a>
+            <a href="staff-login.html" class="block py-2 hover:text-green-200">Staff Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Fresh Groceries Delivered</h1>
+            <p class="text-xl mb-8">Quality products at affordable prices</p>
+            <a href="products.html" class="inline-block bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold mb-8 text-center">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="featured-products">
+            <!-- Products will be loaded here by app.js -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Manoj Groceries</h3>
+                    <p>Your one-stop shop for fresh groceries and daily essentials.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-300">Home</a></li>
+                        <li><a href="products.html" class="hover:text-green-300">Products</a></li>
+                        <li><a href="cart.html" class="hover:text-green-300">Cart</a></li>
+                        <li><a href="staff-login.html" class="hover:text-green-300">Staff Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p><i class="fas fa-phone mr-2"></i> +91 1234567890</p>
+                    <p><i class="fas fa-envelope mr-2"></i> info@manojgroceries.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Manoj Groceries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
